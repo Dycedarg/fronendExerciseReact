@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Invite from './Invite';
+import Invite from './components/Invite';
 
 export default class App extends Component {
 
