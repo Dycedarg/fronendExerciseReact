@@ -13,11 +13,14 @@ export class InviteButton extends Component{
 	inviteUser(){
 		if(this.state.sent === false){
 			this.setState({sent: true});
+			this.props.onSuccess();
 			Meteor.call('inviteUser', this.props.username, (error, response)=>{
 				if(error){
 					this.setState({sent: false});
+					this.props.onFailure();
 				}else{
 					console.log(response);
+					this.props.onSuccess();
 				}
 			});
 		}
@@ -41,8 +44,10 @@ export class InviteAllButton extends InviteButton{
 			Meteor.call('inviteUsers', this.props.usernames, (error, response)=>{
 				if(error){
 					this.setState({sent: false});
+					this.props.onFailure();
 				}else{
 					console.log(response);
+					this.props.onClicked();
 				}
 			});
 		}
