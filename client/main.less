@@ -1,0 +1,250 @@
+.tag{
+	display: block;
+	background-color: #828282;
+    border-radius: 5px 0 0 5px;
+    color: white;
+    display: inline-block;
+    position: relative;
+    font-size: 13px;
+    line-height: 1;
+    margin-right: 20px;
+    padding: 4px 7px 5px;
+    cursor: pointer;
+    margin-top: 1px;
+    margin-bottom: 1px;
+
+    &:after{
+    	border-color: transparent #828282;
+	    border-style: solid;
+	    border-width: 11px 0 11px 11px;
+	    content: "";
+	    position: absolute;
+	    right: -11px;
+	    top: 0;
+	    box-sizing: inherit;
+    }
+}
+
+.action-panel{
+	padding: 24px 36px;
+
+	.label{
+		color: black;
+		font-weight: normal;
+	}
+
+	.btn-action{
+		border-radius: 16px;
+		border-color: #e78f37;
+		color: #555;
+		outline: none;
+		padding: 4px 14px;
+		// padding-left: 14px;
+	}
+
+	.btn-product-action{
+		width: 136px;
+
+		&.active{
+			color: #fff;
+			background: darkgray;
+			box-shadow: none;
+		}
+	}
+
+	.search-by-group{
+		border: 1px solid lightgray;
+		border-radius: 16px;
+		padding: 6px;
+		height: 32px;
+		margin-left: 12px;
+
+		.btn-search-by{
+			border: none;
+			height: 16px;
+			padding: 0 18px;
+			border-right: 1px solid lightgray;
+			border-left: 1px solid lightgray;
+
+			&:first-of-type, &.active:first-of-type{
+				border-left: none;
+			}
+
+			&:last-of-type, &.active:last-of-type{
+				border-right: none;
+			}
+
+			&.active{
+				color: #e78f37;
+				border: none;
+				background: white;
+				box-shadow: none;
+				border-right: 1px solid lightgray;
+				border-left: 1px solid lightgray;
+			}
+
+			&:hover{
+				background: white;
+			}
+
+			&:active{
+				box-shadow: none;
+			}
+		}
+
+		&:not(:first-child):not(:last-child){
+			border-left: 1px solid lightgray;
+			border-right: 1px solid lightgray;
+		}
+	}
+
+	.panel-tags{
+		cursor: text;
+		height: auto;
+		padding: 4px 15px;
+
+		.filter-tag{
+
+			&:before{
+				transition: opacity 0.18s ease-in-out;
+				content: 'x ';
+				opacity: 0.0;
+			}
+
+			&:hover:before{
+				content: 'x ';
+				opacity: 1.0;
+			}
+		}
+
+		.tag-input{
+			background-color: transparent;
+		    border: 0px;
+		    outline: none;
+		    box-shadow: none;
+		    margin-top: 2px;
+		    margin-bottom: 2px;
+		}
+	}
+
+	.tag-list{
+		display: none;
+		position: absolute;
+		margin-top: 18px;
+		margin-left: -8px;
+		z-index: 10;
+
+		.tag-select-item{
+			
+		}
+	}
+
+	.panel-users{
+		padding: 0 15px;
+		height: 196px;
+		// height: 120px;
+		overflow-y: scroll;
+
+		&::-webkit-scrollbar {
+			width: 8px;
+			height: 8px;
+		}
+		&::-webkit-scrollbar-button {
+			width: 0px;
+			height: 0px;
+		}
+		&::-webkit-scrollbar-thumb {
+			background: white;
+			border: 1px solid lightgray;
+			border-left: none;
+			border-right: none;
+			border-radius: 2px;
+		}
+		&::-webkit-scrollbar-thumb:hover {
+			background: lightgray;
+		}
+		&::-webkit-scrollbar-thumb:active {
+			background: darkgray;
+		}
+		&::-webkit-scrollbar-track {
+			background: #ffffff;
+			border: 1px solid #efefef;
+			border-top: none;
+			border-bottom: none;
+		}
+		&::-webkit-scrollbar-track:hover {
+			background: #fdfdfd;
+		}
+		&::-webkit-scrollbar-track:active {
+			background: #fdfdfd;
+		}
+		&::-webkit-scrollbar-corner {
+			background: transparent;
+		}
+
+		.list-group{
+			margin-bottom: 0;
+			margin-top: -1px;
+			margin-left: 1px;
+
+			.list-group-item{
+				border-left: none;
+
+				&:first-child{
+					border-top: none;
+					border-top-right-radius: 0;
+				}
+
+				&:last-child{
+					border-bottom-right-radius: 0;
+					border-bottom: none;
+				}
+
+				img{
+					border-radius: 32px;
+					border: 1px solid #e78f37;
+				}
+
+				.user-info{
+					padding-top: 4px;
+					margin-left: 50px;
+
+					.user-info-item{
+						margin-left: 5px;
+
+						.user-title{
+							color: lightgray;
+
+							&:not(:last-of-type):after{
+								content: ', ';
+							}
+						}
+					}
+				}
+
+				.btn-invite, .btn-sent{
+					margin-left: -14px;
+					margin-top: 9px;
+					width: 64px;
+				}
+
+				.btn-sent, .btn-sent-all{
+					background: orange !important;
+					color: white;
+					cursor: inherit;
+				}
+			}
+		}
+	}
+
+	hr{
+		margin: 36px 0;
+	}
+
+	.btn-next{
+		width: 200px;
+		border-radius: 16px;
+		border-color: #e78f37;
+		background: #e78f37;
+	}
+}
